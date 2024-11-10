@@ -105,7 +105,7 @@ Ensure that FFmpeg is installed and accessible from your system's PATH.
 1. Run the script and provide the YouTube video URL:
 
     ```bash
-    python transcribe_youtube_chatgpt.py --url <youtube_url> --ffmpeg <ffmpeg_path>
+    python transcribe_youtube_chatgpt.py
     ```
 
 2. Enter the YouTube URL when prompted and specify the location of **FFmpeg** (or press Enter to use the default).
