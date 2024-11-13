@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whispertube"
+version = "0.1.0"
+description = "A tool to transcribe YouTube videos using Whisper and summarize with ChatGPT"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "tqdm",
+    "python-dotenv",
+    "yt-dlp",
+    "openai==0.28.0",
+    "openai-whisper @ git+https://github.com/openai/whisper.git@25639fc17ddc013d56c594bfbf7644f2185fad84",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-mock",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "src"
+]
+
+[project.scripts]
+whispertube = "whispertube.__main__:main"
