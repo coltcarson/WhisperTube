@@ -29,3 +29,16 @@ pythonpath = [
 
 [project.scripts]
 whispertube = "whispertube.__main__:run"
+
+[tool.flake8]
+max-line-length = 120
+extend-ignore = [
+    "D104",  # Missing docstring in public package
+    "D205",  # 1 blank line required between summary line and description
+    "D400",  # First line should end with a period
+    "D401",  # First line should be in imperative mood
+    "E501",  # Line too long
+]
+per-file-ignores = [
+    "__init__.py:F401"  # Ignore unused imports in __init__.py
+]

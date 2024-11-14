@@ -1,26 +1,15 @@
-"""Core functionality for downloading, transcribing, and summarizing YouTube videos.
-
-This module provides the core functionality for:
-1. Downloading YouTube videos using yt-dlp
-2. Transcribing audio using OpenAI's Whisper
-3. Summarizing transcriptions using GPT-4
-4. Saving results in Markdown format
-"""
+"""Core functionality for downloading, transcribing, and summarizing YouTube videos."""
 
 import datetime
 import logging
 import os
 import re
-import shutil
-import subprocess
-import tempfile
 from typing import Any, Dict, Optional, Tuple
 
 import openai
 import whisper
 import yt_dlp
 from dotenv import load_dotenv
-from tqdm import tqdm
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -134,8 +123,13 @@ def summarize_transcription(transcription: str) -> Optional[str]:
             raise ValueError("OpenAI API key not found in environment variables")
 
         prompt = (
-            "Please summarize and enhance the following transcript to make it more concise, engaging, and logically coherent. Assume the transcription may contain inaccuracies, especially in mathematical expressions. Correct any apparent errors and reformat all formulas using LaTeX syntax within Markdown for proper rendering in VSCode. Use inline math (e.g., $x^2 + y^2 = z^2$) for simple expressions and separate code blocks with double dollar signs ($$...$$) for complex equations. Structure the summary with clear explanations, headings, bullet points, and formatted code blocks for readability.:\n"
-            + transcription
+            "Please summarize and enhance the following transcript. "
+            "Make it concise and engaging, correct any errors, and format "
+            "mathematical expressions using LaTeX within Markdown. Use inline "
+            "math (e.g., $x^2 + y^2 = z^2$) for simple expressions and "
+            "separate code blocks with double dollar signs ($$...$$) for "
+            "complex equations. Structure with headings and bullet points.\n\n"
+            f"{transcription}"
         )
 
         response = openai.ChatCompletion.create(

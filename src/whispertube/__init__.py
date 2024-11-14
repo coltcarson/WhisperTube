@@ -1,4 +1,4 @@
-"""WhisperTube - A tool to transcribe YouTube videos using Whisper and summarize with ChatGPT."""
+"""WhisperTube: A tool for transcribing and summarizing YouTube videos using OpenAI's models."""
 
 from .transcriber import (
     download_youtube_video,

@@ -1,0 +1,17 @@
+[flake8]
+max-line-length = 120
+extend-ignore =
+    # Missing docstring in public package
+    D104,
+    # 1 blank line required between summary line and description
+    D205,
+    # First line should end with a period
+    D400,
+    # First line should be in imperative mood
+    D401,
+    # Line too long
+    E501
+
+per-file-ignores =
+    # Ignore unused imports in __init__.py
+    __init__.py:F401
