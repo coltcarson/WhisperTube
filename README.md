@@ -1,12 +1,12 @@
 # WhisperTube 🎥 ➡️ 📝
 
-Transcribe YouTube videos using OpenAI's Whisper and summarize them using GPT-4, with special handling for mathematical expressions in LaTeX! ✨
+Transcribe YouTube videos using OpenAI's Whisper and summarize them using GPT-4o, with special handling for mathematical expressions in LaTeX! ✨
 
 ## 🌟 Features
 
 - 🎥 Download audio from YouTube videos
 - 🎯 Transcribe audio using OpenAI's Whisper
-- 🤖 Summarize transcriptions using GPT-4
+- 🤖 Summarize transcriptions using GPT-4o
 - 📐 Format mathematical expressions in LaTeX
 - 📝 Save transcriptions and summaries in Markdown
 - ⚡ Command-line interface for easy use
@@ -39,18 +39,21 @@ WhisperTube/
 ## 🚀 Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/WhisperTube.git
 cd WhisperTube
 ```
 
 2. Create and activate virtual environment:
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
 3. Install dependencies:
+
 ```bash
 # For development
 pip install -r requirements-dev.txt
@@ -60,6 +63,7 @@ pip install -r requirements.txt
 ```
 
 4. Set up your OpenAI API key:
+
 ```bash
 # Create .env file from template
 cp .env.example .env
@@ -106,21 +110,25 @@ summary = summarize_transcription(transcription)
 ## 🛠️ Development
 
 1. Install development dependencies:
+
 ```bash
 pip install -r requirements-dev.txt
 ```
 
 2. Set up pre-commit hooks:
+
 ```bash
 pre-commit install
 ```
 
 3. Run tests:
+
 ```bash
 pytest
 ```
 
 4. Update dependencies:
+
 ```bash
 # Update runtime dependencies
 pip-compile requirements.in
@@ -140,7 +148,7 @@ pip-compile requirements-dev.in -o requirements-dev.txt
 1. Input: YouTube URL
 2. Download: Extract audio using yt-dlp
 3. Transcribe: Process audio with Whisper
-4. Enhance: Summarize using GPT-4
+4. Enhance: Summarize using GPT-4o
 5. Output: Save as Markdown with LaTeX formatting
 
 ## 📝 License
@@ -171,6 +179,7 @@ pip-compile requirements-dev.in -o requirements-dev.txt
 ## 📬 Support
 
 If you encounter any issues or have questions:
+
 1. Check the [Issues](https://github.com/yourusername/WhisperTube/issues) page
 2. Open a new issue if needed
 3. Provide as much detail as possible about your problem
