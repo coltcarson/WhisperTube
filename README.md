@@ -143,6 +143,54 @@ pip-compile requirements-dev.in -o requirements-dev.txt
 - 🎵 FFmpeg
 - 🔑 OpenAI API key
 
+### Installing FFmpeg
+
+#### macOS
+
+Using Homebrew (recommended):
+```bash
+# Install Homebrew if you haven't already
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install FFmpeg
+brew install ffmpeg
+```
+
+Or download directly from [FFmpeg's official website](https://ffmpeg.org/download.html#build-mac).
+
+#### Windows
+
+1. **Using Chocolatey** (recommended):
+   ```bash
+   # Install Chocolatey if you haven't already (run in admin PowerShell)
+   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+   # Install FFmpeg
+   choco install ffmpeg
+   ```
+
+2. **Manual Installation**:
+   - Download the latest FFmpeg build from [FFmpeg's official website](https://ffmpeg.org/download.html#build-windows)
+   - Extract the ZIP file to a directory (e.g., `C:\ffmpeg`)
+   - Add FFmpeg to your system's PATH:
+     1. Open **System Properties** (Win + X → System)
+     2. Click **Advanced system settings**
+     3. Click **Environment Variables**
+     4. Under **System Variables**, find and select **Path**
+     5. Click **Edit**
+     6. Click **New**
+     7. Add the path to FFmpeg's bin folder (e.g., `C:\ffmpeg\bin`)
+     8. Click **OK** on all windows
+
+#### Verify Installation
+
+After installation, verify FFmpeg is properly installed:
+```bash
+ffmpeg -version
+```
+
+This should display FFmpeg version information. If you get a "command not found" error, ensure FFmpeg is properly added to your system's PATH.
+
 ## 🔄 Workflow
 
 1. Input: YouTube URL
