@@ -80,14 +80,16 @@ def test_save_transcription(temp_dir, mock_transcription, mock_summary):
     # Verify file was created
     files = os.listdir(transcripts_dir)
     assert len(files) == 1, "Expected one file to be created"
-    
+
     file_path = os.path.join(transcripts_dir, files[0])
     assert os.path.exists(file_path), "File should exist"
-    assert files[0].startswith(f"{video_title}_transcription_summary_"), "File should have correct prefix"
+    assert files[0].startswith(
+        f"{video_title}_transcription_summary_"
+    ), "File should have correct prefix"
     assert files[0].endswith(".md"), "File should have .md extension"
 
     # Verify file contents
-    with open(file_path, 'r') as f:
+    with open(file_path, "r") as f:
         content = f.read()
         assert mock_summary in content, "Summary should be in the file"
         assert mock_transcription in content, "Transcription should be in the file"
