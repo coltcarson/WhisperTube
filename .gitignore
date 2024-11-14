@@ -28,7 +28,12 @@ MANIFEST
 
 # Project files
 transcripts/*.md
-WhisperTube/
+
+# Virtual environment
+# WhisperTube/bin/
+# WhisperTube/include/
+# WhisperTube/lib/
+# WhisperTube/pyvenv.cfg
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

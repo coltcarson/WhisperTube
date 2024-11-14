@@ -1,0 +1,17 @@
+-r requirements.in
+
+# Code quality
+black
+isort
+flake8
+flake8-docstrings
+mypy
+
+# Testing
+pytest
+pytest-mock
+pytest-cov
+
+# Development tools
+pre-commit
+pip-tools

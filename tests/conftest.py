@@ -1,6 +1,8 @@
-import pytest
 import os
 import tempfile
+
+import pytest
+
 
 @pytest.fixture
 def temp_dir():
@@ -8,10 +10,12 @@ def temp_dir():
     with tempfile.TemporaryDirectory() as tmpdirname:
         yield tmpdirname
 
+
 @pytest.fixture
 def sample_audio_path(temp_dir):
     """Create a mock audio file path."""
     return os.path.join(temp_dir, "audio.wav")
+
 
 @pytest.fixture
 def mock_video_info():
@@ -19,13 +23,15 @@ def mock_video_info():
     return {
         "title": "Test Video Title",
         "duration": 120,
-        "description": "Test video description"
+        "description": "Test video description",
     }
+
 
 @pytest.fixture
 def mock_transcription():
     """Return a mock transcription text."""
     return "This is a test transcription of the audio content."
+
 
 @pytest.fixture
 def mock_summary():

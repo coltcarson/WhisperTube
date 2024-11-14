@@ -28,4 +28,4 @@ pythonpath = [
 ]
 
 [project.scripts]
-whispertube = "whispertube.__main__:main"
+whispertube = "whispertube.__main__:run"

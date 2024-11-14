@@ -1,7 +1,5 @@
 tqdm
 python-dotenv
 yt-dlp
-pytest
-pytest-mock
 openai==0.28.0
 openai-whisper @ git+https://github.com/openai/whisper.git@25639fc17ddc013d56c594bfbf7644f2185fad84

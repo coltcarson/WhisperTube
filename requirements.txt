@@ -22,12 +22,6 @@ certifi==2024.8.30
     #   yt-dlp
 charset-normalizer==3.4.0
     # via requests
-colorama==0.4.6
-    # via
-    #   pytest
-    #   tqdm
-exceptiongroup==1.2.2
-    # via pytest
 filelock==3.16.1
     # via torch
 frozenlist==1.5.0
@@ -40,8 +34,6 @@ idna==3.10
     # via
     #   requests
     #   yarl
-iniconfig==2.0.0
-    # via pytest
 jinja2==3.1.4
     # via torch
 llvmlite==0.43.0
@@ -70,20 +62,10 @@ openai==0.28.0
     # via -r requirements.in
 openai-whisper @ git+https://github.com/openai/whisper.git@25639fc17ddc013d56c594bfbf7644f2185fad84
     # via -r requirements.in
-packaging==24.2
-    # via pytest
-pluggy==1.5.0
-    # via pytest
 propcache==0.2.0
     # via yarl
 pycryptodomex==3.21.0
     # via yt-dlp
-pytest==8.3.3
-    # via
-    #   -r requirements.in
-    #   pytest-mock
-pytest-mock==3.14.0
-    # via -r requirements.in
 python-dotenv==1.0.1
     # via -r requirements.in
 regex==2024.9.11
@@ -97,8 +79,6 @@ sympy==1.13.1
     # via torch
 tiktoken==0.8.0
     # via openai-whisper
-tomli==2.0.2
-    # via pytest
 torch==2.5.0
     # via openai-whisper
 tqdm==4.66.5
