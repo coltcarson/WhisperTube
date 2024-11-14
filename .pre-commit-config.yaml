@@ -1,3 +1,6 @@
+default_install_hook_types: [pre-commit, pre-push]
+default_stages: [commit, push]
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
@@ -13,21 +16,35 @@ repos:
     hooks:
       - id: black
         language_version: python3.10
+        stages: [commit]
 
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
     hooks:
       - id: isort
         args: ["--profile", "black"]
+        stages: [commit]
 
   - repo: https://github.com/pycqa/flake8
     rev: 6.0.0
     hooks:
       - id: flake8
         additional_dependencies: [flake8-docstrings]
+        stages: [commit]
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.3.0
     hooks:
       - id: mypy
         args: [--ignore-missing-imports]
+        stages: [push]  # Run type checking before push
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: Run pytest
+        entry: pytest
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [push]  # Run tests before push
