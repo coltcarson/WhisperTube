@@ -81,6 +81,16 @@ cp .env.example .env
 
 ### Command Line Interface 💻
 
+First, install the package in editable mode:
+```bash
+# Make sure you're in your virtual environment
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install in editable mode
+pip install -e .
+```
+
+Now you can use the `whispertube` command:
 ```bash
 # Basic usage (will prompt for URL)
 whispertube
@@ -90,6 +100,15 @@ whispertube --url "https://youtube.com/watch?v=..."
 
 # Specify output directory
 whispertube --url "..." --output-dir "./transcripts"
+```
+
+Verify the installation:
+```bash
+# Check if whispertube is installed
+pip list | grep whispertube
+
+# Check where it's installed
+which whispertube
 ```
 
 ### Python API 🐍
